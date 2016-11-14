@@ -1,0 +1,22 @@
+extends layoutejercicio2
+
+block content
+  //- h1= title
+  //- p Welcome to #{title}
+  //- a {{ 5 + 6  }} suma
+  div.col-md-4.col-md-offset-4.container
+        div.well(ng-controller="operaciones")
+          |Primer numero
+          input.form-control(type="text",name="primern1",ng-model="primern")
+          br
+          |Segundo numero
+          input.form-control(type="text",name="segundon2",ng-model="segundon")
+          br
+          button.btn.btn-primary(ng-click="sumar()") Sumar
+          button.btn.btn-success(ng-click="restar()") Restar
+          button.btn.btn-info(ng-click="multiplicar()") Multiplicar
+          button.btn.btn-warning(ng-click="dividir()") Dividir
+          button.btn.btn-danger(ng-click="limpiar()") limpiar
+          h1 Total: {{total}}  
+
+

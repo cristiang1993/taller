@@ -1,0 +1,22 @@
+{
+  "name": "taller",
+  "description": "",
+  "main": "",
+  "authors": [
+    "cristian giron <cristiangiron1993@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}

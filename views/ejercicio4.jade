@@ -1,0 +1,12 @@
+extends layoutejercicio4
+
+block content
+  div.col-md-6.col-md-offset-3.container
+        div(ng-controller="TiendaController")
+          div.well(ng-repeat="b in articulo1")
+           h1 {{b.nombre }}
+           h3 Precio: {{b.precio }}
+           h3 stock: {{b.stock }}
+           h3 imagen: {{b.imagen }}
+     
+

@@ -1,0 +1,17 @@
+extends layoutejercicio8
+
+block content
+  div.col-md-6.col-md-offset-3.container
+        div(ng-controller="TiendaController")
+          input.form-control(ng-model="searchText",placeholder="Buscar:")
+          br
+          div.well(ng-repeat="b in articulo1 |  filter:searchText",ng-cloak)
+           h1 {{b.nombre }}
+           h3 Precio: {{b.precio | currency:"€":2 }}
+           h3 stock: {{b.stock }}
+           IMG.img-responsive.container(ng-src="{{b.imagen }}")
+           br
+           button.btn.btn-primary(ng-hide="{{b.stock==0}}") Comprar
+
+     
+
