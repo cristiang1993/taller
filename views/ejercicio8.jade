@@ -1,17 +1,35 @@
 extends layoutejercicio8
 
 block content
-  div.col-md-6.col-md-offset-3.container
-        div(ng-controller="TiendaController")
+  div.col-md-6.col-md-offset-3.container(ng-cloak)
+        div.col-md-12(ng-controller="TiendaController")
           input.form-control(ng-model="searchText",placeholder="Buscar:")
           br
-          div.well(ng-repeat="b in articulo1 |  filter:searchText",ng-cloak)
+          div.well.col-md-12(ng-repeat="b in articulo1 |  filter:searchText")
+          
+
            h1 {{b.nombre }}
            h3 Precio: {{b.precio | currency:"€":2 }}
            h3 stock: {{b.stock }}
-           IMG.img-responsive.container(ng-src="{{b.imagen }}")
-           br
-           button.btn.btn-primary(ng-hide="{{b.stock==0}}") Comprar
+            br
+            div.col-md-12
+              div.col-md-6
+                IMG.img-responsive(ng-src="{{b.imagen }}",style="margin-top:44px")
+                br
+               div.col-md-6
+                section.tabbable(ng-init='tab = 1')
+                 ul.nav.nav-tabs(role='tablist')
+                  li
+                    a( href="#tab{{b.index}}"  ng-click='tab = 1', data-toggle='tab') Descripcion
+                .tab-content
+                  .tab-pane(id="tab{{b.index}}" ,ng-show='tab === 1')
+                    h5 {{b.descripcion}}
 
-     
+            br
+            br
+            button.btn.btn-primary(ng-hide="{{b.stock==0}}") Comprar
+                    
+  
+
+
 
